@@ -3,41 +3,59 @@
 #include <list>
 #include <vector>
 
+/**
+ * The base class used to derive Patrol and Submarine objects.
+ */
 class Ship
 {
 protected:
-	int health;
-	std::string name;
+	int health; //!< The health of the ship.
+	std::string name; //!< The name of the ship.
 public:
-	virtual Ship* clone() = 0;
-	std::string getName() { return name; }
-	int getHealth() { return health; }
+	virtual Ship* clone() = 0; //!< Create and return a pointer to a copy of this object
+	std::string getName() { return name; } //!< Returns the name of the ship
+	int getHealth() { return health; } //!< Returns the health of the ship
 };
 
+/**
+ * A derived class of Ship representing a Patrol
+ */
 class Patrol: public Ship
 {
 public:
+	/**
+	 * Constructs a Patrol with the specified name and health.
+	 */
 	Patrol(std::string n, int h)
 	{
 		name = n;
 		health = h;
 	}
 
-	Ship* clone() { return new Patrol(name, health); }
+	Ship* clone() { return new Patrol(name, health); } //!< Create and return a pointer to a copy of this object
 };
 
+/**
+ * A derived class of Ship representing a Submarine
+ */
 class Submarine: public Ship
 {
 public:
+	/**
+	 * Constructs a Submarine with the specified name and health.
+	 */
 	Submarine(std::string n, int h)
 		{
 			name = n;
 			health = h;
 		}
 
-	Ship* clone() { return new Submarine(name, health); }
+	Ship* clone() { return new Submarine(name, health); } //!< Create and return a pointer to a copy of this object
 };
 
+/**
+ * A static class that creates Ship objects on demand
+ */
 class ShipManager
 {
 private:
@@ -45,10 +63,15 @@ private:
 	static Ship* submarinePrototype;
 
 public:
+	/**
+	 * Clone and return a pointer to a copy of its Patrol object prototype
+	 */
 	static Ship* getPatrol() {
 		return patrolPrototype->clone();
 	}
-
+	/**
+	 * Clone and return a pointer to a copy of its Submarine object prototype
+	 */
 	static Ship* getSubmarine() {
 		return submarinePrototype->clone();
 	}
