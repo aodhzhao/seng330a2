@@ -17,7 +17,7 @@ CPP_DEPS += \
 %.o: ../%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -I/Users/aodhzhao/Downloads/jsoncons-master/src -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -I"/Users/aodhzhao/Documents/workspace/Seng330A2/gtest_src" -I"/Users/aodhzhao/Documents/workspace/Seng330A2/Include" -I"/Users/aodhzhao/Documents/workspace/Seng330A2/src" -I"/Users/aodhzhao/Documents/workspace/Seng330A2/Tests" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
