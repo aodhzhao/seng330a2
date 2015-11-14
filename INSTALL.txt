@@ -1,0 +1,18 @@
+This project was built on MAC OS X
+
+1. Download Eclipse Luna here: https://eclipse.org/luna/
+
+2. Install the CDT Plugin for Eclipse. Go to Help > Install New Software and paste this: http://download.eclipse.org/tools/cdt/releases/8.6
+
+3. Download this project ZIP and extract to somewhere on your machine.
+
+4. Open up Eclipse and switch to the C/C++ perspective by clicking the button in the top right.
+
+5. Go to File > C++ Project. Give the Project a name and select Empty Project for the Project Type. Click Finish.
+
+6. Right click the project in Project Explorer and click Import...
+
+7. In the new window, select General > File System as the import source. Locate the project from project ZIP and import all the files and folders.
+
+8. Click Run in Eclipse to build the project, The program should run successfully.
+
